@@ -1,0 +1,39 @@
+{
+  "name": "mern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/index.js",
+    "start": "node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricardo1470/MERN.git"
+  },
+  "keywords": [
+    "Mongodb",
+    "Express",
+    "React",
+    "Nodejs"
+  ],
+  "author": "Ricardo Camayo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ricardo1470/MERN/issues"
+  },
+  "homepage": "https://github.com/ricardo1470/MERN#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http-errors": "^1.8.1",
+    "mongodb": "^4.2.1",
+    "mongoose": "^6.1.0",
+    "morgan": "^1.10.0",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
