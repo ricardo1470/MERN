@@ -3,6 +3,6 @@ const router = express.Router();
 
 const { getinit } = require('../controllers/init');
 
-router.get('/', getinit);
+router.get('/api/task', getinit);
 
 module.exports = router;
