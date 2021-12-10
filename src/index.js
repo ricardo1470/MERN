@@ -6,6 +6,8 @@ const path = require('path');
 const createError = require('http-errors');
 const mongooose = require('mongoose');
 
+const { conectDataBase } = require('./database');
+
 const app = expres();
 
 const port = process.env.PORT || 9000;
