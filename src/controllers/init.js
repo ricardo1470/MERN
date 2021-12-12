@@ -4,13 +4,13 @@ const getInit = async (req, res, next) => {
     const tasks = await Task.find();
     console.log(tasks);
     res.json(tasks);
-    next();
+    next(e);
 }
 
 const getInitById = async (req, res, next) => {
     const task = await Task.findById(req.params.id);
     res.json(task);
-    next();
+    next(e);
 }
 
 const postInit = async (req, res, next) => {
@@ -18,7 +18,7 @@ const postInit = async (req, res, next) => {
     const task = new Task({ title, description });
     await task.save();
     res.json({ status: 'Task saved' });
-    next();
+    next(e);
 }
 
 const putInit = async (req, res, next) => {
@@ -26,13 +26,13 @@ const putInit = async (req, res, next) => {
     const newTask = {title, description};
     await Task.findByIdAndUpdate(req.params.id, newTask)
     res.json({ status: 'Task updated' });
-    next();
+    next(e);
 }
 
 const deleteInit = async (req, res, next) => {
     await Task.findByIdAndRemove(req.params.id)
     res.json({ status: 'Task deleted' });
-    next();
+    next(e);
 }
 
 /* export functions*/
