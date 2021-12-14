@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-const { getInit, getInitById ,postInit, putInit, deleteInit } = require('../controllers/init');
+const { getRoutInit, getInit, getInitById ,postInit, putInit, deleteInit } = require('../controllers/init');
+
+router.get('/api', getRoutInit);
 
 router.get('/api/task', getInit);
 

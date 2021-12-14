@@ -47,7 +47,7 @@ class Body extends Component {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
+                    //console.log(data);
                     M.toast({html: 'Task Added'});
                     this.setState({
                         title : '',

@@ -1,16 +1,21 @@
 const Task = require('../models/task');
 
+const getRoutInit = (req, res, nex) => {
+    res.json({ status: 'Task API' });
+    next();
+}
+
 const getInit = async (req, res, next) => {
     const tasks = await Task.find();
     console.log(tasks);
     res.json(tasks);
-    next(e);
+    next();
 }
 
 const getInitById = async (req, res, next) => {
     const task = await Task.findById(req.params.id);
     res.json(task);
-    next(e);
+    next();
 }
 
 const postInit = async (req, res, next) => {
@@ -18,7 +23,7 @@ const postInit = async (req, res, next) => {
     const task = new Task({ title, description });
     await task.save();
     res.json({ status: 'Task saved' });
-    next(e);
+    next();
 }
 
 const putInit = async (req, res, next) => {
@@ -26,17 +31,18 @@ const putInit = async (req, res, next) => {
     const newTask = {title, description};
     await Task.findByIdAndUpdate(req.params.id, newTask)
     res.json({ status: 'Task updated' });
-    next(e);
+    next();
 }
 
 const deleteInit = async (req, res, next) => {
     await Task.findByIdAndRemove(req.params.id)
     res.json({ status: 'Task deleted' });
-    next(e);
+    next();
 }
 
 /* export functions*/
 module.exports = {
+    getRoutInit,
     getInit,
     getInitById,
     postInit,
