@@ -133,7 +133,7 @@ class Body extends Component {
                                         </div>
                                     </div>
                                     <button className="btn light-blue darken-4" type="submit" name="action">
-                                        Submit<i class="material-icons right">send</i>
+                                        Submit<i className="material-icons right">send</i>
                                     </button>
                                 </form>
                             </div>

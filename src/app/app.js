@@ -5,10 +5,10 @@ import Body from './components/Body/Body';
 
 function App() {
     return (
-        <div>
+        <>
             <Nav />
             <Body />
-        </div>
+        </>
     );
 }
 

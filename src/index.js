@@ -4,7 +4,6 @@ const cors = require('cors');
 const favicon = require('serve-favicon');
 const path = require('path');
 const createError = require('http-errors');
-const mongooose = require('mongoose');
 
 const { conectDataBase } = require('./database');
 
