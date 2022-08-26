@@ -7,6 +7,7 @@
     "test": "jest",
     "test1": "react-scripts test --verbose=true --collectCoverage=true",
     "test2": "NODE_OPTIONS=--trace-warnings jest",
+    "test3": "NODE_OPTIONS=--experimental-vm-modules jest --watchAll --verbose=true --collectCoverage=true --testTimeout=10000",
     "dev": "nodemon ./src/index.js",
     "start": "node ./src/index.js",
     "webpack": "webpack --mode development --watch"

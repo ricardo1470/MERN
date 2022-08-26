@@ -1,17 +1,25 @@
 const request = require('supertest');
-const indexRouter = require('../routes/index');
-//import {describe, expect, test} from '@jest/globals';
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
-describe('GET request testing', () => {
-    // test init route
-    test('should return 200 OK, init route', () => {
-        const response = request(indexRouter).get('/api').send();
-        expect(response.status).toBe(200);
-    });
+const tasks = require('../models/task');
 
-    // test /api/task route
-    //test('should return 200 OK, user route', () => {
-    //    const response = request(indexRouter).get('/api/tast').send();
-    //    expect(response.status);
-    //});
-});
+describe('Task API', () => {
+    test('connect to mongoose', async () => {
+        await mongoose.connect('mongodb://localhost/test', {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useFindAndModify: false,
+        });
+    })
+
+    test('create a task', async () => {
+        const task = await tasks.create({
+            title: 'test',
+            description: 'test',
+        });
+
+        expect(task.title).toBe('test');
+        expect(task.description).toBe('test');
+    })
+})
